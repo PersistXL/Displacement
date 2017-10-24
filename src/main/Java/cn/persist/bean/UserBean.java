@@ -58,4 +58,16 @@ public class UserBean {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    @Override
+    public String toString() {
+        return "UserBean{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", post_message='" + post_message + '\'' +
+                ", order_situation='" + order_situation + '\'' +
+                ", id_card='" + id_card + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
+    }
 }
