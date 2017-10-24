@@ -1,6 +1,5 @@
 package cn.persist.service.impl;
 
-import cn.persist.bean.UserBean;
 import cn.persist.bean.UserInfo;
 import cn.persist.dao.LoginDao;
 import cn.persist.dao.impl.LoginDaoImpl;
