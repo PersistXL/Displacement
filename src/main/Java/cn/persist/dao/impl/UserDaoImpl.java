@@ -15,7 +15,7 @@ public class UserDaoImpl implements UserDao {
         //向数据库添加信息
         try{
             Connection conn = DBConn.dbConn();
-            String changeSql = "INSERT INTO userinfo(username,password,sex,age,job,id_card,phone) VALUES (?,?,?,?,?,?,?)";
+            String changeSql = "INSERT INTO userinfo(username,password,sex,age,job,id_card,phone,img) VALUES (?,?,?,?,?,?,?,?)";
             PreparedStatement pstm = conn.prepareStatement(changeSql);
             pstm.setString(1,userInfo.getUsername());
             pstm.setString(2,userInfo.getPassword());
@@ -24,6 +24,7 @@ public class UserDaoImpl implements UserDao {
             pstm.setString(5, userInfo.getJob());
             pstm.setString(6,userInfo.getId_card());
             pstm.setString(7,userInfo.getPhone());
+            pstm.setString(8,userInfo.getImg());
         }catch (Exception e){
             System.out.println(e);
         }

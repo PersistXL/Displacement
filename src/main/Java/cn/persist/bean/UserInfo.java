@@ -13,14 +13,7 @@ public class UserInfo {
     private String order_situation;
     private String id_card;
     private String phone;
-
-    public UserInfo() {
-    }
-
-    public UserInfo(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
+    private String img;
 
     @Override
     public String toString() {
@@ -34,7 +27,24 @@ public class UserInfo {
                 ", order_situation='" + order_situation + '\'' +
                 ", id_card='" + id_card + '\'' +
                 ", phone='" + phone + '\'' +
+                ", img='" + img + '\'' +
                 '}';
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    public UserInfo() {
+    }
+
+    public UserInfo(String username, String password) {
+        this.username = username;
+        this.password = password;
     }
 
     public String getUsername() {

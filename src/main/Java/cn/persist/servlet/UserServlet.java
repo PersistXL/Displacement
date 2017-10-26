@@ -54,5 +54,7 @@ public class UserServlet extends HttpServlet {
 
         userService.add(userInfo);
     }
-
+    protected void revamp(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
+        UserInfo userInfo = new UserInfo();
+    }
 }
