@@ -10,60 +10,29 @@ Target Server Type    : MYSQL
 Target Server Version : 50540
 File Encoding         : 65001
 
-Date: 2017-10-23 16:32:29
+Date: 2017-10-26 18:11:42
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for cashier
+-- Table structure for information
 -- ----------------------------
-DROP TABLE IF EXISTS `cashier`;
-CREATE TABLE `cashier` (
+DROP TABLE IF EXISTS `information`;
+CREATE TABLE `information` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
+  `sex` varchar(2) NOT NULL,
+  `age` int(100) NOT NULL,
+  `job` varchar(255) NOT NULL,
   `post_message` varchar(255) DEFAULT NULL,
   `order_situation` varchar(255) DEFAULT NULL,
   `id_card` varchar(18) NOT NULL,
   `phone` varchar(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
--- Records of cashier
--- ----------------------------
-
--- ----------------------------
--- Table structure for coach
--- ----------------------------
-DROP TABLE IF EXISTS `coach`;
-CREATE TABLE `coach` (
-  `id` int(255) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of coach
--- ----------------------------
-
--- ----------------------------
--- Table structure for driver
--- ----------------------------
-DROP TABLE IF EXISTS `driver`;
-CREATE TABLE `driver` (
-  `id` int(255) NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `post_message` varchar(255) DEFAULT NULL,
-  `order_situation` varchar(255) DEFAULT NULL,
-  `id_card` varchar(18) NOT NULL,
-  `phone` varchar(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of driver
+-- Records of information
 -- ----------------------------
 
 -- ----------------------------
@@ -86,60 +55,35 @@ CREATE TABLE `jobs` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for nurse
+-- Table structure for message
 -- ----------------------------
-DROP TABLE IF EXISTS `nurse`;
-CREATE TABLE `nurse` (
+DROP TABLE IF EXISTS `message`;
+CREATE TABLE `message` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `post_message` varchar(255) DEFAULT NULL,
-  `order_situation` varchar(255) DEFAULT NULL,
-  `id_card` varchar(18) NOT NULL,
-  `phone` varchar(11) NOT NULL,
+  `f_id` int(11) NOT NULL,
+  `j_id` int(11) NOT NULL,
+  `date` varchar(255) NOT NULL,
+  `matter` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of nurse
+-- Records of message
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for teacher
+-- Table structure for userinfo
 -- ----------------------------
-DROP TABLE IF EXISTS `teacher`;
-CREATE TABLE `teacher` (
-  `id` int(255) NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `post_message` varchar(255) DEFAULT NULL COMMENT '自己发布的信息',
-  `order_situation` varchar(255) DEFAULT NULL COMMENT '接单情况',
-  `id_card` varchar(18) NOT NULL,
-  `phone` varchar(11) NOT NULL,
+DROP TABLE IF EXISTS `userinfo`;
+CREATE TABLE `userinfo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(30) NOT NULL,
+  `password` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of teacher
+-- Records of userinfo
 -- ----------------------------
-INSERT INTO `teacher` VALUES ('1', '张三', '123456', '', '', '61292719820501162X', '13433338888');
-INSERT INTO `teacher` VALUES ('2', '李四', '123456', '', '', '', '13511112222');
-
--- ----------------------------
--- Table structure for waiter
--- ----------------------------
-DROP TABLE IF EXISTS `waiter`;
-CREATE TABLE `waiter` (
-  `id` int(255) NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `post_message` varchar(255) DEFAULT NULL,
-  `order_situation` varchar(255) DEFAULT NULL,
-  `id_card` varchar(18) NOT NULL,
-  `phone` varchar(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of waiter
--- ----------------------------
+INSERT INTO `userinfo` VALUES ('1', 'root', 'root');
+INSERT INTO `userinfo` VALUES ('2', 'lisi', '123456');

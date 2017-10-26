@@ -1,6 +1,6 @@
 package cn.persist.servlet;
 
-import cn.persist.bean.UserBean;
+import cn.persist.bean.UserInfo;
 import cn.persist.service.UserService;
 import cn.persist.service.impl.UserServiceImpl;
 
@@ -43,15 +43,16 @@ public class UserServlet extends HttpServlet {
         String id_card = request.getParameter("id_card");
         String phone = request.getParameter("phone");
 //        System.out.println(sex+age+job+post_message+order_situation+id_card+phone);
-        UserBean userBean = new UserBean();
-        userBean.setId_card(id_card);
-        userBean.setAge(age);
-        userBean.setJob(job);
-        userBean.setOrder_situation(order_situation);
-        userBean.setPost_message(post_message);
-        userBean.setPhone(phone);
-        userBean.setSex(sex);
+        UserInfo userInfo = new UserInfo();
+        userInfo.setId_card(id_card);
+        userInfo.setAge(age);
+        userInfo.setJob(job);
+        userInfo.setOrder_situation(order_situation);
+        userInfo.setPost_message(post_message);
+        userInfo.setPhone(phone);
+        userInfo.setSex(sex);
 
-        userService.add(userBean);
+        userService.add(userInfo);
     }
+
 }

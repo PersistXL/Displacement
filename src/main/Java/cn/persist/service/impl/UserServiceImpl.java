@@ -1,6 +1,6 @@
 package cn.persist.service.impl;
 
-import cn.persist.bean.UserBean;
+import cn.persist.bean.UserInfo;
 import cn.persist.dao.UserDao;
 import cn.persist.dao.impl.UserDaoImpl;
 import cn.persist.service.UserService;
@@ -10,7 +10,7 @@ import cn.persist.service.UserService;
  */
 public class UserServiceImpl implements UserService {
     UserDao userDao = new UserDaoImpl();
-    public void add(UserBean userBean) {
-        userDao.add(userBean);
+    public void add(UserInfo userInfo) {
+        userDao.add(userInfo);
     }
 }
