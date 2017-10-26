@@ -4,27 +4,49 @@ package cn.persist.bean;
  * Created by ACER on 2017/10/23.
  */
 public class UserBean {
-    private String username;
-    private String password;
+    private String sex;
+    private int age;
+    private String job;
     private String post_message;
     private String order_situation;
     private String id_card;
     private String phone;
 
-    public String getUsername() {
-        return username;
+    @Override
+    public String toString() {
+        return "UserBean{" +
+                "sex='" + sex + '\'' +
+                ", age=" + age +
+                ", job='" + job + '\'' +
+                ", post_message='" + post_message + '\'' +
+                ", order_situation='" + order_situation + '\'' +
+                ", id_card='" + id_card + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public String getSex() {
+        return sex;
     }
 
-    public String getPassword() {
-        return password;
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getJob() {
+        return job;
+    }
+
+    public void setJob(String job) {
+        this.job = job;
     }
 
     public String getPost_message() {
@@ -57,17 +79,5 @@ public class UserBean {
 
     public void setPhone(String phone) {
         this.phone = phone;
-    }
-
-    @Override
-    public String toString() {
-        return "UserBean{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", post_message='" + post_message + '\'' +
-                ", order_situation='" + order_situation + '\'' +
-                ", id_card='" + id_card + '\'' +
-                ", phone='" + phone + '\'' +
-                '}';
     }
 }
