@@ -46,6 +46,11 @@ public class UserServlet extends HttpServlet {
         UserBean userBean = new UserBean();
         userBean.setId_card(id_card);
         userBean.setAge(age);
+        userBean.setJob(job);
+        userBean.setOrder_situation(order_situation);
+        userBean.setPost_message(post_message);
+        userBean.setPhone(phone);
+        userBean.setSex(sex);
 
         userService.add(userBean);
     }
