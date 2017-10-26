@@ -54,7 +54,11 @@ public class UserServlet extends HttpServlet {
 
         userService.add(userInfo);
     }
-    protected void revamp(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
+    protected void refer(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
         UserInfo userInfo = new UserInfo();
+        userInfo.setUsername(request.getParameter("username"));
+        userService.refer(userInfo);
+        response.sendRedirect(request.getContextPath() + "/个人信息页面");
+
     }
 }

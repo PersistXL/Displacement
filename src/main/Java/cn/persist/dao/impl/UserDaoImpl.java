@@ -6,6 +6,8 @@ import cn.persist.utils.DBConn;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.List;
 
 /**
  * Created by ACER on 2017/10/26.
@@ -28,5 +30,21 @@ public class UserDaoImpl implements UserDao {
         }catch (Exception e){
             System.out.println(e);
         }
+    }
+    public UserInfo refer(UserInfo userInfo){
+        //在数据库中查询信息
+        try{
+            Connection conn = DBConn.dbConn();
+            String changeSql = "select * from userinfo WHERE username = ?";
+            PreparedStatement pstm = conn.prepareStatement(changeSql);
+            pstm.setString(1,userInfo.getUsername());
+            ResultSet rs = pstm.executeQuery();
+            if(rs.next()) {
+                return userInfo;
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return null;
     }
 }

@@ -13,4 +13,9 @@ public class UserServiceImpl implements UserService {
     public void add(UserInfo userInfo) {
         userDao.add(userInfo);
     }
+    public UserInfo refer(UserInfo userInfo){
+        userDao.refer(userInfo);
+        return userInfo;
+    }
+
 }

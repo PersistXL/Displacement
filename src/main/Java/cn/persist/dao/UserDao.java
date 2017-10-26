@@ -7,4 +7,5 @@ import cn.persist.bean.UserInfo;
  */
 public interface UserDao {
     void add(UserInfo userInfo);
+    UserInfo refer(UserInfo userInfo);
 }

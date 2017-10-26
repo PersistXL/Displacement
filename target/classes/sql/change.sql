@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50540
 File Encoding         : 65001
 
-Date: 2017-10-26 18:11:42
+Date: 2017-10-26 19:54:07
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -79,11 +79,17 @@ CREATE TABLE `userinfo` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
+  `sex` varchar(2) DEFAULT NULL,
+  `age` int(100) DEFAULT NULL,
+  `job` varchar(255) DEFAULT NULL,
+  `id_card` varchar(18) DEFAULT NULL,
+  `phone` varchar(11) DEFAULT NULL,
+  `img` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of userinfo
 -- ----------------------------
-INSERT INTO `userinfo` VALUES ('1', 'root', 'root');
-INSERT INTO `userinfo` VALUES ('2', 'lisi', '123456');
+INSERT INTO `userinfo` VALUES ('1', 'root', 'root', null, null, null, '', '', null);
+INSERT INTO `userinfo` VALUES ('2', 'lisi', '123456', null, null, null, '', '', null);
