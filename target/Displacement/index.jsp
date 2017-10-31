@@ -42,6 +42,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="log-bwn">
 					<input type="submit"  value="登录">
 				</div>
+<br/>
+				<div class="log-bwn">
+					<input type="submit" onclick="window.open('index.html')"  value="注册">
+				</div>
 				</form>
 			</div>
 			<p class="copy">© 2017 换班系统网络公司</p>
