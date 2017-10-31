@@ -40,7 +40,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<p style="color: red"><%=request.getAttribute("err") != null ? request.getAttribute("err") : ""%></p>
 				<div class="log-bwn">
-					<input type="submit"  value="Login">
+					<input type="submit"  value="登录">
 				</div>
 				</form>
 			</div>
