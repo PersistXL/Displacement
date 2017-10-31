@@ -37,11 +37,11 @@ public class LoginServlet extends HttpServlet {
 
         if (bool) {
             System.out.println("密码正确");
-            req.getRequestDispatcher("index.jsp").forward(req,resp);
+            req.getRequestDispatcher("index.html").forward(req,resp);
         }else {
             req.setAttribute("err","用户名或密码有误，请重新登录");
             System.out.println("密码错误");
-            req.getRequestDispatcher("Login.jsp").forward(req,resp);
+            req.getRequestDispatcher("index.jsp").forward(req,resp);
         }
     }
 
