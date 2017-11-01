@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-<title>换班系统登录</title>
+<title>换班系统注册</title>
 <!-- Custom Theme files -->
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
 <!-- Custom Theme files -->
@@ -25,26 +25,40 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="top-login">
 				<span><img src="images/group.png" alt=""/></span>
 			</div>
-			<h1>登录</h1>
+			<h1>欢迎注册</h1>
 			<div class="login-top">
-			<form action="/LoginServlet">
+			<form action="/UserServlet">
+				<input type="hidden" name="method" value="add">
 				<div class="login-ic">
-					<i ></i>
-					<input type="text"  value="请输入用户名" name="username" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '请输入用户名';}"/>
+					<input type="text"  placeholder="请输入用户名（必填）" name="username" />
 					<div class="clear"> </div>
 				</div>
 				<div class="login-ic">
-					<i class="icon"></i>
-					<input type="password"  value="密码" name="password" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '请输入密码';}"/>
+					<input type="password"  placeholder="请输入密码（必填）" name="password" />
 					<div class="clear"> </div>
 				</div>
-				<p style="color: red"><%=request.getAttribute("err") != null ? request.getAttribute("err") : ""%></p>
-				<div class="log-bwn">
-					<input type="submit"  value="登录">
+				<div class="login-ic">
+					<input type="text"  placeholder="请输入性别（必填）" name="sex" />
+					<div class="clear"> </div>
 				</div>
-<br/>
+				<div class="login-ic">
+					<input type="text"  placeholder="请输入年龄" name="age" />
+					<div class="clear"> </div>
+				</div>
+				<div class="login-ic">
+					<input type="text"  placeholder="请输入职业" name="job" />
+					<div class="clear"> </div>
+				</div>
+				<div class="login-ic">
+					<input type="text"  placeholder="请输入身份证号码（必填）" name="id_card" />
+					<div class="clear"> </div>
+				</div>
+				<div class="login-ic">
+					<input type="text"  placeholder="请输入手机号（必填）" name="phone" />
+					<div class="clear"> </div>
+				</div>
 				<div class="log-bwn">
-					<input type="submit" onclick="window.open('register.jsp')"  value="去注册">
+					<input type="submit" value="注册" placeholder="">
 				</div>
 				</form>
 			</div>

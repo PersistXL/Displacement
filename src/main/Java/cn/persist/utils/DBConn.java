@@ -1,7 +1,6 @@
 package cn.persist.utils;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.*;
 
 /**
  * Created by ACER on 2017/10/24.
@@ -26,5 +25,25 @@ public class DBConn {
             System.out.println(e);
         }
         return conn;
+    }
+
+    public static void close( Connection conn , PreparedStatement pstm,ResultSet rs) throws SQLException {
+        if(rs != null){
+            rs.close();
+        }
+        if(pstm !=null){
+            pstm.close();
+        }
+        if(conn != null){
+            conn.close();
+        }
+    }
+    public static void close( Connection conn , PreparedStatement pstm) throws SQLException {
+        if(pstm !=null){
+            pstm.close();
+        }
+        if(conn != null){
+            conn.close();
+        }
     }
 }

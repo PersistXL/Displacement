@@ -8,9 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-/**
- * Created by ACER on 2017/10/24.
- */
+
 public class LoginDaoImpl implements LoginDao {
 
     public boolean Login(UserInfo userInfo) {
@@ -25,6 +23,7 @@ public class LoginDaoImpl implements LoginDao {
            ResultSet rs = pstm.executeQuery();
            if (rs.next()) {
                System.out.println("查询出来的结果"+rs);
+               DBConn.close(conn,pstm,rs);
                return true;
            }
        }catch (Exception e){

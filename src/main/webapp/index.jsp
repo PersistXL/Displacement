@@ -44,7 +44,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 <br/>
 				<div class="log-bwn">
-					<input type="submit" onclick="window.open('index.html')"  value="注册">
+					<input type="submit" onclick="window.open('register.jsp')"  value="去注册">
 				</div>
 				</form>
 			</div>
