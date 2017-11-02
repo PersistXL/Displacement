@@ -38,7 +38,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="clear"> </div>
 				</div>
 				<div class="login-ic">
-					<input type="text"  placeholder="请输入性别（必填）" name="sex" />
+					<input type="radio" value="男" placeholder="男" name="sex" /><span style="color: white">男</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="radio" value="女" placeholder="女" name="sex" /><span style="color: white">女</span>
 					<div class="clear"> </div>
 				</div>
 				<div class="login-ic">
@@ -58,7 +59,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="clear"> </div>
 				</div>
 				<div class="log-bwn">
-					<input type="submit" value="注册" placeholder="">
+					<input type="submit" value="注册" onclick="window.open('index.jsp')">
+				</div>
+				<br/>
+				<div class="log-bwn">
+					<input type="reset" value="重置文字"/>
 				</div>
 				</form>
 			</div>
