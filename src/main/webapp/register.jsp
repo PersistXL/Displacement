@@ -59,7 +59,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="clear"> </div>
 				</div>
 				<div class="log-bwn">
-					<input type="submit" value="注册" onclick="window.open('index.jsp')">
+					<input type="submit" value="注册" onclick="alert('注册成功'),window.open('index.jsp')">
 				</div>
 				<br/>
 				<div class="log-bwn">

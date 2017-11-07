@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50540
 File Encoding         : 65001
 
-Date: 2017-10-26 19:54:07
+Date: 2017-11-02 17:28:32
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -86,10 +86,13 @@ CREATE TABLE `userinfo` (
   `phone` varchar(11) DEFAULT NULL,
   `img` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of userinfo
 -- ----------------------------
 INSERT INTO `userinfo` VALUES ('1', 'root', 'root', null, null, null, '', '', null);
 INSERT INTO `userinfo` VALUES ('2', 'lisi', '123456', null, null, null, '', '', null);
+INSERT INTO `userinfo` VALUES ('3', '张三', '123456798', '男', '20', '教师', '612726199502057815', '15709181869', null);
+INSERT INTO `userinfo` VALUES ('4', '王五', '123456', '男', '20', '司机', '612726195505021457', '15709081201', null);
+INSERT INTO `userinfo` VALUES ('5', '赵六', '123456', '男', '15', '', '', '', null);
