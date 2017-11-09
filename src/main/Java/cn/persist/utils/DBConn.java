@@ -27,7 +27,8 @@ public class DBConn {
         return conn;
     }
 
-    public static void close( Connection conn , PreparedStatement pstm,ResultSet rs) throws SQLException {
+    public static void close( Connection conn , PreparedStatement pstm,ResultSet rs)  {
+        try{
         if(rs != null){
             rs.close();
         }
@@ -36,6 +37,8 @@ public class DBConn {
         }
         if(conn != null){
             conn.close();
+        }}catch (Exception e){
+            e.fillInStackTrace();
         }
     }
     public static void close( Connection conn , PreparedStatement pstm) throws SQLException {

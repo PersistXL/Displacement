@@ -26,7 +26,7 @@ public class UserServlet extends HttpServlet {
         System.out.println(method);
         if(method.equals("add")){
             add(request,response);
-        }if(method == "delete"){
+        }if(method == "refer"){
 
         }
     }
@@ -64,6 +64,12 @@ public class UserServlet extends HttpServlet {
     protected void refer(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
         UserInfo userInfo = new UserInfo();
         userInfo.setUsername(request.getParameter("username"));
+        userInfo.setPassword(request.getParameter("password"));
+        userInfo.setSex(request.getParameter("sex"));
+        userInfo.setAge(Integer.parseInt(request.getParameter("age")));
+        userInfo.setJob(request.getParameter("job"));
+        userInfo.setId_card(request.getParameter("id_card"));
+        userInfo.setPhone(request.getParameter("phone"));
         userService.refer(userInfo);
         response.sendRedirect(request.getContextPath() + "/个人信息页面");
 

@@ -30,7 +30,7 @@ public class UserDaoImpl implements UserDao {
 //            pstm.setString(8,userInfo.getImg());
             System.out.println("获取信息"+pstm);
         }catch (Exception e){
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
     public UserInfo refer(UserInfo userInfo){

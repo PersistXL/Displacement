@@ -6,5 +6,5 @@ import cn.persist.bean.UserInfo;
  * Created by ACER on 2017/10/23.
  */
 public interface LoginDao {
-    boolean Login(UserInfo userInfo);
+    UserInfo Login(UserInfo userInfo);
 }

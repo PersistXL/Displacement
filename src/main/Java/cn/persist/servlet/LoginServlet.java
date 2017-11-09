@@ -33,10 +33,11 @@ public class LoginServlet extends HttpServlet {
 
         UserInfo userInfo = new UserInfo(username, password);
 
-        boolean bool = loginService.Login(userInfo);
+        UserInfo userInfo1 = loginService.Login(userInfo);
 
-        if (bool) {
+        if (userInfo1 !=null) {
             System.out.println("密码正确");
+            req.getSession().setAttribute("userInfo",userInfo1);
             req.getRequestDispatcher("index.html").forward(req,resp);
         }else {
             req.setAttribute("err","用户名或密码有误，请重新登录");

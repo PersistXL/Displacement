@@ -10,7 +10,7 @@ import cn.persist.service.LoginService;
  */
 public class LoginServiceImpl implements LoginService{
     LoginDao loginDao = new LoginDaoImpl();
-    public boolean Login(UserInfo userInfo) {
+    public UserInfo Login(UserInfo userInfo) {
         return loginDao.Login(userInfo);
     }
 }
