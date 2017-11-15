@@ -16,22 +16,23 @@
 <body>
 	<h1>欢迎发布工作</h1>
 	<div class="login-01">
-			<form>
+			<form action="/MessageServlet">
+                <input type="hidden" name="method" value="refers">
 				<ul>
 				<li class="first">
-					<a href="#" class=" icon user"></a><input type="text" class="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" >
+					<a href="#" class=" icon user"></a><input type="text" name="name" class="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" >
 					<div class="clear"></div>
 				</li>
 				<li class="first">
-					<a href="#" class=" icon email"></a><input type="text" class="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" >
+					<a href="#" class=" icon email"></a><input type="text" name="email" class="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" >
 					<div class="clear"></div>
 				</li>
 				<li class="first">
-					<a href="#" class=" icon phone"></a><input type="text" class="text" value="Phone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone';}" >
+					<a href="#" class=" icon phone"></a><input type="text" name="phone" class="text" value="Phone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone';}" >
 					<div class="clear"></div>
 				</li>
 				<li class="second">
-				<a href="#" class=" icon msg"></a><textarea value="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Comments';}">Comments</textarea>
+				<a href="#" class=" icon msg"></a><textarea value="Message" name="matter" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Comments';}">Comments</textarea>
 				<div class="clear"></div>
 				</li>
 			</ul>
