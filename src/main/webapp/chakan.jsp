@@ -1,3 +1,6 @@
+<%@ page import="cn.persist.bean.MessageInfo" %>
+<%@ page import="java.util.List" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
 <head>
@@ -12,8 +15,14 @@
     <script src="style/c_html_js_add.js" type="text/javascript"></script>
     <script src="style/custom.js" type="text/javascript"></script>
     <link rel="alternate" type="application/rss+xml" href="style/feed.css" title="主页页面"/>
+    <script type="text/javascript">
+
+    </script>
 </head>
 <body class="multi default">
+<%
+   List<MessageInfo> messageInfo= (List<MessageInfo>) request.getSession().getAttribute("message");
+%>
 <div id="divAll">
     <div id="divPage">
         <div id="divMiddle">
@@ -25,19 +34,48 @@
             <div id="divNavBar">
                 <ul>
                     <li><a href="index.html">首页</a></li>
-                    <li><a href="chakan.html" title="选择适合你的就是最好的">查看工作</a></li>
+                    <li><a href="chakan.jsp" title="选择适合你的就是最好的">查看工作</a></li>
                     <li><a href="/xbk212shoufa/index.html" title="环保之主页">深能环保</a></li>
                     <li><a href="person.jsp" title="一切有为法，如梦幻泡影，如露亦如电，应作如是观。">个人中心</a></li>
                     <li><a href="liu.html" target="_blank" title="沟通从这里开始">发布内容</a></li>
                     <li><a href="bug.jsp" title="了解你想知道的一切">联系我们</a></li>
                 </ul>
             </div>
-            <div>
-                <span name="name"></span>
-                <span name="email"></span>
-                <span name="phone"></span>
-                <span name="matter"></span>
-            </div>
+            <div id="divMain">
+                <div class="post multi-post cate4 auth1">
+                    <% for(int i = messageInfo.size()-1;i>=0;i--){%>
+                    <div class="post multi-post cate4 auth1">
+                        <table style="border: solid 1px wheat">
+                            <tr align="center"  style="border: solid 1px wheat">
+                                <td style="border: solid 1px wheat" >姓名</td>
+                                <td style="border: solid 1px wheat">邮箱</td>
+                                <td style="border: solid 1px wheat">电话</td>
+                                <td style="border: solid 1px wheat">工作内容</td>
+                            </tr>
+                            <tr align="center"  style="border: solid 1px wheat">
+                                <td style="border: solid 1px wheat"><span name="name"><%=messageInfo.get(i).getName()%></span></td>
+                                <td style="border: solid 1px wheat"><span name="email"><%=messageInfo.get(i).getEmail()%></span></td>
+                                <td style="border: solid 1px wheat"><span name="phone"><%=messageInfo.get(i).getPhone()%></span></td>
+                                <td style="border: solid 1px wheat"><span name="matter"><%=messageInfo.get(i).getMatter()%></span></td>
+                            </tr>
+                        </table>
+                    <%--<span name="name"><%=messageInfo.get(i).getName()%></>--%>
+                    <%--<span name="email"><%=messageInfo.get(i).getEmail()%></span>--%>
+                    <%--<span name="phone"><%=messageInfo.get(i).getPhone()%></span>--%>
+                    <%--<span name="matter"><%=messageInfo.get(i).getMatter()%></span>--%>
+                    </div>
+                    <%}%>
+                </div>
+            <%--<div id="divMain">--%>
+            <%--<% for(int i = 0;i<messageInfo.size();i++){%>--%>
+                <%--<div class="post multi-post cate4 auth1">--%>
+                <%--<span name="name"><%=messageInfo.get(i).getName()%></>--%>
+                <%--<span name="email"><%=messageInfo.get(i).getEmail()%></span>--%>
+                <%--<span name="phone"><%=messageInfo.get(i).getPhone()%></span>--%>
+                <%--<span name="matter"><%=messageInfo.get(i).getMatter()%></span>--%>
+                <%--</div>--%>
+        <%--<%}%>--%>
+            <%--</div>--%>
                 <div class="post pagebar"><a href="#"><span class="page first-page">&laquo;</span></a><span
                         class="page now-page">1</span><a href="#catalog.asp?page=2"><span class="page">2</span></a><a
                         href="#catalog.asp?page=3"><span class="page">3</span></a><a href="#catalog.asp?page=4"><span
@@ -204,6 +242,7 @@
     <div class="clear"></div>
 </div>
 <!-- dd BEGIN -->
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script language="JavaScript1.2">
     var typ = ["marginTop", "marginLeft"], rangeN = 10, timeout = 0;
     function shake(o, end) {
@@ -217,6 +256,8 @@
             clearTimeout(shakeTimer)
         };
     }
+
+
 </script>
 <!-- dd END -->
 </body>

@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by ACER on 2017/11/11.
@@ -26,8 +28,8 @@ public class MessageServlet extends HttpServlet {
         System.out.println(method);
         if(method.equals("refers")){
             refers(request,response);
-        }if(method == "refer"){
-
+        }if(method.equals("query")){
+            query(request,response);
         }
 //        MessageInfo messageInfo = new MessageInfo();
 //        messageInfo.setName(request.getParameter("name"));
@@ -61,5 +63,9 @@ public class MessageServlet extends HttpServlet {
 //        MessageService messageService = new MessageServiceImpl();
         messageService.refers(messageInfo);
 
+    }
+    public void query(HttpServletRequest request,HttpServletResponse response){
+        List<MessageInfo> list  = messageService.query();
+        request.getSession().setAttribute("message" ,list);
     }
 }
